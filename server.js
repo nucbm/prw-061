@@ -1,26 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//import morgan from 'morgan';
 const morgan = require('morgan');
-//const cors = require('cors');
 
 const app = express();
 const port = 3000;
 
-// Middleware pentru a permite cereri din alte origini (ex: frontend separat)
-//app.use(cors());
-
 app.use(morgan('tiny'));
-
 
 // Middleware pentru parsarea datelor trimise prin POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 app.use(express.static('public'))
-
-
 
 // Ruta pentru GET (parametrii sunt în URL)
 app.get('/get-data', (req, res) => {
@@ -35,7 +26,7 @@ app.post('/post-data', (req, res) => {
 });
 
 // Pornirea serverului
-app.listen(port, () => {
-    console.log(`Serverul rulează la http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Serverul rulează la portul: ${port}`);
 });
 
