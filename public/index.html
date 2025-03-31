@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form GET și POST</title>
+</head>
+<body>
+    <h2>Transmitere parametri cu GET</h2>
+    <form action="http://localhost:3000/get-data" method="GET">
+        <label for="name">Nume:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Trimite GET</button>
+    </form>
+
+    <h2>Transmitere parametri cu POST</h2>
+    <form action="http://localhost:3000/post-data" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <button type="submit">Trimite POST</button>
+    </form>
+</body>
+</html>
+
